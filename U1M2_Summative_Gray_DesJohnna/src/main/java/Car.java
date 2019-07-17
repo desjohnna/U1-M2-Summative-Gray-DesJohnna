@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
 
 public class Car {
 
@@ -12,13 +8,12 @@ public class Car {
     private String color;
     private int odometerMiles;
     private int carId = 0;
-    public List<Car> carMasterList;
-
 
 
     //Default constructor
     Car() {
     }
+
 
     //creating a constructor for all variables
     public Car(int carId, String make, String model, int year, String color, int odometerMiles) {
@@ -81,36 +76,9 @@ public class Car {
     }
 
 
-
-
-
-    public void list() {
-
-
-//            for(int x = 0; x< carMasterList.size(); x++) {
-//                System.out.println("Car ID: " + carMasterList.get(x).getCarId(x));
-//                System.out.println("Make: " + carMasterList.get(x).getMake());
-//            }
-
-        for (int i = 0; i < this.carMasterList.size(); i++) {
-
-            //get(i)= the index of the student in the array, .getId()=
-            if (this.carMasterList.get(i).getMake().equals(make)) {
-                System.out.println(carMasterList.get(i).getMake());
-                //return the puppy at that index
-                // return this.carMasterList.get(i);
-            }
-
-        }
-        // return null;
-
-
-    }
-
-
     @Override
-  public String toString() {
+    public String toString() {
 
-        return "Car ID: " + carId + ", " + make + ", " + model + ", " + year + ", " + getColor() + ", " + odometerMiles + ".";
+        return "Car ID: " + carId + "\nMake: " + make + "\nModel: " + model + "\nYear: " + year + "\nColor: " + color + "\nMiles: " + odometerMiles + "\n\n";
     }
 }

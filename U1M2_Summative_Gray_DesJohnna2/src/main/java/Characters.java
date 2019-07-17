@@ -7,7 +7,7 @@ public class Characters {
     private int stamina;
     private int speed;
     private int attackPower;
-    private int lives;
+    private int lives = 3;
 
 
     private boolean running = false;
@@ -65,7 +65,6 @@ public class Characters {
         this.strength = strength;
     }
 
-
     public int getAttackPower() {
         return this.attackPower;
     }
@@ -83,31 +82,33 @@ public class Characters {
     }
 
 
-    //Should I make these abstract or not
-
+    //action method that all players can perform
 
     public boolean run() {
-        System.out.println("You are now running.");
+        System.out.println(getName() + ", you are now running at " + this.speed + " miles per hour.");
+
         return this.running = true;
 
     }
 
     public int attack() {
         decreaseHealth();
-        System.out.println("Your health is fading...");
+        System.out.println(getName() + ", your health is fading...");
+        System.out.println("Health: " + this.health);
         return this.health;
     }
 
     public int decreaseStamina() {
         if (this.stamina <= 25) {
-            System.out.println("You are too weak to continue");
+            System.out.println(getName() + ", you are too weak to continue");
             lives--;
             System.out.println("Lives:  " + this.lives);
             return lives;
 
         } else {
             this.stamina -= 25;
-            System.out.println("Your stamina has decreased by 25 points");
+            System.out.println(getName() + ", your stamina has decreased by 25 points");
+            System.out.println("Stamina: " + this.stamina);
         }
         return this.stamina;
     }
@@ -115,7 +116,8 @@ public class Characters {
     public int increaseStamina() {
 
         this.stamina += 25;
-        System.out.println("Your stamina has increased by 25.");
+        System.out.println(getName() + ", your stamina has increased by 25.");
+        System.out.println("Stamina: " + this.stamina);
         return this.stamina;
     }
 
@@ -124,9 +126,10 @@ public class Characters {
         this.health -= attackPower;
         if (health <= 0) {
             lives--;
-            System.out.println("Your health is too low to go on, you have lost a life.");
+            System.out.println(getName() + ", your health is too low to go on, you have lost a life.");
         }
-        System.out.println("Your health has gone down " + this.health + " points.");
+        System.out.println(getName() + ", your health has gone down " + this.attackPower + " points.");
+        System.out.println("Health: " + this.health);
         return this.health;
     }
 
@@ -134,11 +137,12 @@ public class Characters {
         //setting up a if/else so health cannot be healed over 100
         if (this.health <= 75) {
             this.health += 25;
-            System.out.println("Your health has increased by 25.");
+            System.out.println(getName() + ", your health has increased by 25.");
+            System.out.println("Health: " + this.health);
             return this.health;
         } else {
             this.health = 100;
-            System.out.println("Your health is full.");
+            System.out.println(getName() + ", your health is full.");
             return this.health;
         }
 

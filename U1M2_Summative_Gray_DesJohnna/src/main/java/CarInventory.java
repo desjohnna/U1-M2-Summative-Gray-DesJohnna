@@ -20,7 +20,7 @@ public class CarInventory {
         this.carMasterList.add(new Car(carId++, "Jeep", "Cherokee", 1998, "Brown", 210000));
         this.carMasterList.add(new Car(carId++, "Toyota", "Camry", 2010, "Silver", 90000));
         this.carMasterList.add(new Car(carId++, "Ford", "Fusion", 2019, "Red", 0));
-        this.carMasterList.add(new Car(carId++, "Honda", "HRV", 2017, "Black", 25000));
+        this.carMasterList.add(new Car(carId++, "Land Rover", "Range Rover", 2001, "Blue", 150000));
 
 
     }
@@ -66,19 +66,20 @@ public class CarInventory {
 
         System.out.println("Please enter number of miles on car");
         int miles = scanner.nextInt();
-      tempCar.setOdometerMiles(miles);
+        tempCar.setOdometerMiles(miles);
 
 
         System.out.println("Your car has been added, your Car ID number is " + carId + ".");
 
-//Defining variables to assign the inputs from user to match with the elements of the constructor
+        //
         carMasterList.add(tempCar);
 
-        System.out.println(carMasterList);
+        System.out.println(tempCar);
         return carMasterList;
 
 
     }
+
     public void delete(int carId) {
 
         for (int x = 0; x < this.carMasterList.size(); x++) {
@@ -92,28 +93,17 @@ public class CarInventory {
 
     }
 
-    public void search(String x) {
+    public void search(int x) {
 
-        //loops through entire list
-//        for (int i = 0; i < this.carMasterList.size(); i++) {
-//
-//            //get(i)= the index of the student in the array, .getId()=
-//            if (this.carMasterList.get(i).getCarId(i) == carId) {
-//
-//                //return the puppy at that index
-//                System.out.println(carMasterList.get(i));
-//            }
 
-        //}
         Scanner scanner = new Scanner(System.in);
         switch (x) {
-            case "make":
+            case 1:
                 System.out.println("Please enter the make of the car.");
 
                 String make = scanner.nextLine();
 
                 for (int i = 0; i < this.carMasterList.size(); i++) {
-
 
 
                     //get(i)= the index of the student in the array, .getId()=
@@ -126,13 +116,12 @@ public class CarInventory {
 
 
                 break;
-            case "model":
+            case 2:
                 System.out.println("Please enter car model.");
 
                 String model = scanner.nextLine();
 
                 for (int i = 0; i < this.carMasterList.size(); i++) {
-
 
 
                     //get(i)= the index of the student in the array, .getId()=
@@ -144,17 +133,16 @@ public class CarInventory {
                 }
 
                 break;
-            case "year":
-                System.out.println("Please enter year.");
+            case 3:
+                System.out.println("Please enter oldest year.");
 
                 int year = scanner.nextInt();
 
                 for (int i = 0; i < this.carMasterList.size(); i++) {
 
 
-
                     //get(i)= the index of the student in the array, .getId()=
-                    if (this.carMasterList.get(i).getYear() == year) {
+                    if (this.carMasterList.get(i).getYear() >= year) {
 
                         //return the puppy at that index
                         System.out.println(carMasterList.get(i));
@@ -162,7 +150,7 @@ public class CarInventory {
                 }
 
                 break;
-            case "color":
+            case 4:
                 System.out.println("Please enter color.");
 
                 String color = scanner.nextLine();
@@ -170,17 +158,15 @@ public class CarInventory {
                 for (int i = 0; i < this.carMasterList.size(); i++) {
 
 
-
-                    //get(i)= the index of the student in the array, .getId()=
                     if (this.carMasterList.get(i).getColor().equals(color)) {
 
-                        //return the puppy at that index
+
                         System.out.println(carMasterList.get(i));
                     }
                 }
 
                 break;
-            case "mileage":
+            case 5:
                 System.out.println("Please enter maximum mileage.");
 
                 int miles = scanner.nextInt();
@@ -188,11 +174,9 @@ public class CarInventory {
                 for (int i = 0; i < this.carMasterList.size(); i++) {
 
 
+                    if (this.carMasterList.get(i).getOdometerMiles() <= miles) {
 
-                    //get(i)= the index of the student in the array, .getId()=
-                    if (this.carMasterList.get(i).getOdometerMiles() == miles) {
 
-                        //return the puppy at that index
                         System.out.println(carMasterList.get(i));
                     }
                 }

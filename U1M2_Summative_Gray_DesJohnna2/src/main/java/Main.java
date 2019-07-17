@@ -84,15 +84,58 @@ public class Main {
             System.out.println("Hello " + constable2.getName() + ".");
 
         }
+        pause();
+
+        if (farmer1.getLives() >= 1 || warrior1.getLives() >= 1 || constable1.getLives() >= 1) {
+
+            //Actual gaming code would go here, with user input calling methods against each other
+            // I've hard coded some examples of code being run
+            //I put in pauses to make reading easier and simulate back and forth game play
+
+            farmer1.run();
+            pause();
 
 
-        if (farmer1.getLives() = 0 || warrior1.getLives() = 0 || constable1.getLives() = 0) {
+            warrior1.attack();
+            pause();
 
-        //gaming code in here
+
+            farmer1.decreaseHealth();
+            pause();
+
+            constable1.attack();
+            pause();
+
+            warrior2.decreaseShieldStrength();
+            pause();
+
+            farmer2.harvest();
+            pause();
+
+            farmer2.plow();
+            pause();
+
+            constable2.arrest();
+            pause();
+
+            constable2.jurisdiction();
+            pause();
+
+            warrior2.run();
+            pause();
+
+            constable1.heal();
+            pause();
+
+            farmer1.setLives(0);
+            warrior1.setLives(0);
+            constable1.setLives(0);
+
         }
-
+        System.out.println("Game Over");
 
     }
+
     public static void pause() {
         try {
             Thread.sleep(2000);

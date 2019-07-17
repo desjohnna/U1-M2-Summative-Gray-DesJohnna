@@ -22,8 +22,8 @@ public class Main {
 
             switch (input) {
                 case 1:
-                   user.add();
-                   break;
+                    user.add();
+                    break;
 
                 case 2:
                     System.out.println("Please enter the car ID you would like to delete.");
@@ -37,9 +37,8 @@ public class Main {
 
                 case 4:
                     System.out.println("How would you like to search?\n1. By make\n2. By model\n3. By year\n4. By color\n5. By milage\n         Please enter a number:");
-                    String x = scanner.nextLine();
+                    int x = scanner.nextInt();
                     user.search(x);
-
 
 
             }
@@ -52,7 +51,7 @@ public class Main {
 
     public static void pause() {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3500);
         } catch (InterruptedException e) {
             System.out.println(e);
         }
