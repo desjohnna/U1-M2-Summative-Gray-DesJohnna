@@ -9,7 +9,7 @@ public class Warrior extends Characters {
 
     //Warrior only method
 
-    //decreases
+    //decreases shield strength
     public void decreaseShieldStrength() {
         shieldStrength -= this.getAttackPower();
         System.out.println("Your Shield Strength has been decreased " + this.getAttackPower() + " points.");

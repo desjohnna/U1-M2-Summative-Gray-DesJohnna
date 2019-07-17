@@ -8,10 +8,8 @@ public class Main {
         //defining an object to call methods with
         CarInventory user = new CarInventory();
         boolean on = true;
-//        Scanner sc = new Scanner(System.in);
-//        int y = sc.nextInt();
-//        user.search(y);
 
+        //Setting a while loop to keep the program running
         while (on) {
             System.out.println("What would you like to do?\n1. Add a car to inventory?\n" +
                     "2. Delete a car from inventory?\n3. See a list of all cars?\n" +

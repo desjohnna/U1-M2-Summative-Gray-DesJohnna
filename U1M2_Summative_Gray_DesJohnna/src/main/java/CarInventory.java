@@ -71,7 +71,7 @@ public class CarInventory {
 
         System.out.println("Your car has been added, your Car ID number is " + carId + ".");
 
-        //
+
         carMasterList.add(tempCar);
 
         System.out.println(tempCar);
@@ -105,11 +105,10 @@ public class CarInventory {
 
                 for (int i = 0; i < this.carMasterList.size(); i++) {
 
-
-                    //get(i)= the index of the student in the array, .getId()=
+                    //get(i)= the index of the car in the array
                     if (this.carMasterList.get(i).getMake().equals(make)) {
 
-                        //return the puppy at that index
+                        //return the car at that index
                         System.out.println(carMasterList.get(i));
                     }
                 }
@@ -123,11 +122,7 @@ public class CarInventory {
 
                 for (int i = 0; i < this.carMasterList.size(); i++) {
 
-
-                    //get(i)= the index of the student in the array, .getId()=
                     if (this.carMasterList.get(i).getModel().equals(model)) {
-
-                        //return the puppy at that index
                         System.out.println(carMasterList.get(i));
                     }
                 }
@@ -140,11 +135,7 @@ public class CarInventory {
 
                 for (int i = 0; i < this.carMasterList.size(); i++) {
 
-
-                    //get(i)= the index of the student in the array, .getId()=
                     if (this.carMasterList.get(i).getYear() >= year) {
-
-                        //return the puppy at that index
                         System.out.println(carMasterList.get(i));
                     }
                 }
@@ -156,11 +147,7 @@ public class CarInventory {
                 String color = scanner.nextLine();
 
                 for (int i = 0; i < this.carMasterList.size(); i++) {
-
-
                     if (this.carMasterList.get(i).getColor().equals(color)) {
-
-
                         System.out.println(carMasterList.get(i));
                     }
                 }
@@ -172,11 +159,7 @@ public class CarInventory {
                 int miles = scanner.nextInt();
 
                 for (int i = 0; i < this.carMasterList.size(); i++) {
-
-
                     if (this.carMasterList.get(i).getOdometerMiles() <= miles) {
-
-
                         System.out.println(carMasterList.get(i));
                     }
                 }
